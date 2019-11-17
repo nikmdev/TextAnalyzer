@@ -1,0 +1,8 @@
+﻿<div class="container">
+    <textarea #txtForAnalyze></textarea>
+    <input class="btn btn-info" (click)="analyzeText(txtForAnalyze.value)" value="Alalyze" />
+</div>
+<div class="container" *ngIf="metricsResult">
+    <app-metrics-result *ngFor="let metric of metricsResult"
+                        [metric]="metric"></app-metrics-result>
+</div>
