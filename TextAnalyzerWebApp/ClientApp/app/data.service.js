@@ -9,13 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { map, publishReplay, refCount } from 'rxjs/operators';
 var DataService = /** @class */ (function () {
     function DataService(http) {
         this.http = http;
         this.url = "/api/metrics";
     }
     DataService.prototype.calculateMetrics = function (textForAnalyze) {
-        return this.http.post(this.url, JSON.stringify(textForAnalyze), { headers: { 'Content-Type': 'application/json' } });
+        if (textForAnalyze != this.textForAnalyzeCash) {
+            this.metricsCash = this.http.post(this.url, JSON.stringify(textForAnalyze), { headers: { 'Content-Type': 'application/json' } }).pipe(map(function (data) { return data['metricsCash']; }), publishReplay(1), refCount());
+            this.textForAnalyzeCash = textForAnalyze;
+        }
+        return this.metricsCash;
+    };
+    DataService.prototype.clearCache = function () {
+        this.metricsCash = null;
     };
     DataService = __decorate([
         Injectable(),
