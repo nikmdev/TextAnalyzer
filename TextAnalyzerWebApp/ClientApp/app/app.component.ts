@@ -9,15 +9,22 @@ import { MetricsResult } from './data.service';
 })
 export class AppComponent {
     title = 'Text Analyzer'
+    loading: boolean = false;
 
     public metricsResult: MetricsResult[];
 
     constructor(private dataService: DataService) { }
 
     analyzeText(value: string) {
-        this.dataService.calculateMetrics(value)
-            .subscribe(result => {
-                this.metricsResult = result;
-            }, error => console.error(error));
+        if (value != null && value != '') {
+            this.dataService.calculateMetrics(value)
+                .subscribe(result => {
+                    this.metricsResult = result;
+                    this.loading = false;
+                }, error => {
+                    this.loading = false;
+                    console.error(error)
+                });
+        }
     }
 }

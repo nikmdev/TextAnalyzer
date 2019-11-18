@@ -3,9 +3,10 @@
     <div class="row">
         <div class="col-xs-12 col-md-6">
             <textarea #txtForAnalyze></textarea>
-            <button class="btn btn-info" (click)="analyzeText(txtForAnalyze.value)">Alalyze</button>
+            <button [disabled]="this.loading" class="btn btn-info" (click)="this.loading = true; analyzeText(txtForAnalyze.value);">Alalyze</button>
         </div>
         <div class="col-xs-12 col-md-6" *ngIf="metricsResult">
+            <h3>Results of metrics</h3>
             <app-metrics-result *ngFor="let metric of metricsResult"
                                 [metric]="metric"></app-metrics-result>
         </div>

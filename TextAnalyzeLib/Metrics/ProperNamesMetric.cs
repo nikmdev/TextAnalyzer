@@ -5,7 +5,7 @@ namespace TextAnalyzeLib
 {
     public class ProperNamesMetric : IMetric
     {
-        public string Title => "Собственные имена";
+        public string Title => "Слов с заглавной буквы";
 
         public bool IsActive { get; set; } = true;
 

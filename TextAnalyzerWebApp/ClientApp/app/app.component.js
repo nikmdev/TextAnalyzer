@@ -20,6 +20,7 @@ var AppComponent = /** @class */ (function () {
             .subscribe(function (result) {
             _this.metricsResult = result;
         }, function (error) { return console.error(error); });
+        this.loading = false;
     };
     AppComponent = __decorate([
         Component({

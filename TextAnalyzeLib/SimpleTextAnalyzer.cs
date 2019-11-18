@@ -41,7 +41,8 @@ namespace TextAnalyzeLib
                StringSplitOptions.RemoveEmptyEntries);
 
             return (from w in words
-                    where w.First() == Char.ToUpper(w.First())
+                    where w.Length > 1
+                    && w.First() == Char.ToUpper(w.First()) 
                     select w).ToArray();
         }
     }
