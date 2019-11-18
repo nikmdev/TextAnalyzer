@@ -18,7 +18,7 @@ var MetricsResultComponent = /** @class */ (function () {
     MetricsResultComponent = __decorate([
         Component({
             selector: 'app-metrics-result',
-            templateUrl: './metrics-result.component.html',
+            templateUrl: './metrics-result.component.html'
         })
     ], MetricsResultComponent);
     return MetricsResultComponent;

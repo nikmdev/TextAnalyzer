@@ -13,7 +13,6 @@ var DataService = /** @class */ (function () {
     function DataService(http) {
         this.http = http;
         this.url = "/api/metrics";
-        this.queryData = JSON.stringify("test data");
     }
     DataService.prototype.calculateMetrics = function (textForAnalyze) {
         return this.http.post(this.url, JSON.stringify(textForAnalyze), { headers: { 'Content-Type': 'application/json' } });

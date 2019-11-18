@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextAnalyzerWebApp", "TextAnalyzerWebApp\TextAnalyzerWebApp.csproj", "{527BE29D-69A8-4E9C-A817-F551B7F75628}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextAnalyzeLib", "TextAnalyzeLib\TextAnalyzeLib.csproj", "{327EAB3E-F650-4BD9-B6F1-1E4F0F91853C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{527BE29D-69A8-4E9C-A817-F551B7F75628}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{527BE29D-69A8-4E9C-A817-F551B7F75628}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{527BE29D-69A8-4E9C-A817-F551B7F75628}.Release|Any CPU.Build.0 = Release|Any CPU
+		{327EAB3E-F650-4BD9-B6F1-1E4F0F91853C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{327EAB3E-F650-4BD9-B6F1-1E4F0F91853C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{327EAB3E-F650-4BD9-B6F1-1E4F0F91853C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{327EAB3E-F650-4BD9-B6F1-1E4F0F91853C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

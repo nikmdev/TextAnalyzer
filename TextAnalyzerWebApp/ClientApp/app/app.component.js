@@ -12,7 +12,7 @@ import { DataService } from './data.service';
 var AppComponent = /** @class */ (function () {
     function AppComponent(dataService) {
         this.dataService = dataService;
-        this.title = 'TextAnalyzer';
+        this.title = 'Text Analyzer';
     }
     AppComponent.prototype.analyzeText = function (value) {
         var _this = this;
