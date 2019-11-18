@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map, publishReplay, refCount } from 'rxjs/operators';
+import { publishReplay, refCount, take } from 'rxjs/operators';
 var DataService = /** @class */ (function () {
     function DataService(http) {
         this.http = http;
@@ -17,7 +17,7 @@ var DataService = /** @class */ (function () {
     }
     DataService.prototype.calculateMetrics = function (textForAnalyze) {
         if (textForAnalyze != this.textForAnalyzeCash) {
-            this.metricsCash = this.http.post(this.url, JSON.stringify(textForAnalyze), { headers: { 'Content-Type': 'application/json' } }).pipe(map(function (data) { return data['metricsCash']; }), publishReplay(1), refCount());
+            this.metricsCash = this.http.post(this.url, JSON.stringify(textForAnalyze), { headers: { 'Content-Type': 'application/json' } }).pipe(publishReplay(1), refCount(), take(1));
             this.textForAnalyzeCash = textForAnalyze;
         }
         return this.metricsCash;

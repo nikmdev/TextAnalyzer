@@ -1,0 +1,16 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+textarea{
+    height: 350px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+app-metrics-result div {
+    background-color: #f4f4f4;
+    border-bottom: 1px solid #dedede;
+    padding: 10px;
+}
