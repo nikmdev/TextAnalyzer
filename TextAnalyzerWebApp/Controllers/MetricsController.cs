@@ -22,14 +22,14 @@ namespace TextAnalyzerWebApp.Controllers
         {
             List<MetricsResult> results = new List<MetricsResult>();
 
-            foreach (var metric in metrics)
+            Parallel.ForEach(metrics, metric =>
             {
                 results.Add(new MetricsResult()
                 {
                     Title = metric.Title,
                     Result = metric.CalculateMetric(textForAnalyze)
                 });
-            }            
+            });           
 
             return results;
         }
